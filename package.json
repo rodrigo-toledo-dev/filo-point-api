@@ -17,6 +17,7 @@
     "require-dir": "^1.2.0"
   },
   "devDependencies": {
+    "babel-plugin-root-import": "^6.4.1",
     "nodemon": "^2.0.2"
   }
 }
