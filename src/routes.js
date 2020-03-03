@@ -5,9 +5,7 @@ const OperationController = require('./controllers/OperationController')
 
 routes.get('/', OperationController.index);
 routes.get('/operations', OperationController.show);
-routes.post('/create', OperationController.create);
-
-
+routes.post('/operations', OperationController.create);
 
 const FileStorageController = require('./controllers/FileStorageController')
 
