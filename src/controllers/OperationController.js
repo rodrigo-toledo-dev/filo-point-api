@@ -13,19 +13,14 @@ module.exports = {
   },
 
   async show(req, res) {
-    const operations = await Operation.find({ employee: req.params.employee });
+    const operations = await Operation.find({ employee: req.body['employee'] }).sort({ createdAt: 'desc' });;
 
     return res.json(operations);
   },
 
-  async store(req, res) {
-    console.log(req.body);
-    const operation = await Operation.create(req.body);
-    const start = moment(operation.createdAt).format('YYYY-MM-DD 00:00:01')
-    let searchParams = {};
-    searchParams['createdAt'] = { $gte: start };
-    searchParams['employee'] = operation.employee
-    const operations = await Operation.find(searchParams).sort({createdAt: 'desc'});
+  async create(req, res) {
+    await Operation.create(req.body);
+    const operations = await Operation.find({ employee: req.body['employee'] }).sort({createdAt: 'desc'});
 
     return res.json(operations);
   }

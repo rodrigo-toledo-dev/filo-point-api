@@ -9,6 +9,6 @@ mongoose.connect('mongodb://localhost:27017/filoapi', { useNewUrlParser: true, u
 
 requireDir('./src/models/');
 
-app.use('/api', require('./src/routes'));
+app.use('/', require('./src/routes'));
 
-app.listen(3000);
+app.listen(3001);

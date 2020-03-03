@@ -3,9 +3,9 @@ const routes = express.Router();
 
 const OperationController = require('./controllers/OperationController')
 
-routes.get('/operations', OperationController.index);
-routes.get('/operations/:employee', OperationController.show);
-routes.post('/operations', OperationController.store);
+routes.get('/', OperationController.index);
+routes.get('/operations', OperationController.show);
+routes.post('/create', OperationController.create);
 
 
 
